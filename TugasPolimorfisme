@@ -1,0 +1,73 @@
+class FakultasTeknik:
+  def __init__(self, Universitas, Fakultas, TahunAjaran):
+    self.univ = Universitas
+    self.fak = Fakultas
+    self.ta = TahunAjaran
+  def CetakData(self):
+    print('Universitas     : ',self.univ)
+    print('Fakultas        : ',self.fak)
+    print('Tahun Ajaran    : ',self.ta)
+    
+class TeknikKomputer(FakultasTeknik):
+  def __init__(self, Universitas, Fakultas, TahunAjaran, JumlahAngkatan):
+    self.ja = JumlahAngkatan
+    FakultasTeknik.__init__(self, Universitas, Fakultas, TahunAjaran)
+    
+  def CetakData(self):
+    print(100 * '.')
+    print('Teknik Komputer')
+    print('Universitas     : ',self.univ)
+    print('Fakultas        : ',self.fak)
+    print('Tahun Ajaran    : ',self.ta)
+    print('Jumlah Angkatan : ',self.ja)
+    print(100 * ' ')
+    
+class Mekatronika(FakultasTeknik):
+  def __init__(self, Universitas, Fakultas, TahunAjaran, JumlahAngkatan):
+    self.ja = JumlahAngkatan
+    FakultasTeknik.__init__(self, Universitas, Fakultas, TahunAjaran)
+    
+  def CetakData(self):
+    print('Pendidikan Vokasi Mekatronika')
+    print('Universitas     : ',self.univ)
+    print('Fakultas        : ',self.fak)
+    print('Tahun Ajaran    : ',self.ta)
+    print('Jumlah Angkatan : ',self.ja)
+    print(100 * ' ')
+    
+class PTIK(FakultasTeknik):
+  def __init__(self, Universitas, Fakultas, TahunAjaran, JumlahAngkatan, Jurusan):
+    self.ja = JumlahAngkatan
+    self.j = Jurusan
+    FakultasTeknik.__init__(self, Universitas, Fakultas, TahunAjaran)
+    
+  def CetakData(self):
+    print('Pendidikan Teknik Informatika Dan Komputer')
+    print('Universitas     : ',self.univ)
+    print('Fakultas        : ',self.fak)
+    print('Jurusan         : ',self.j)
+    print('Tahun Ajaran    : ',self.ta)
+    print('Jumlah Angkatan : ',self.ja)
+    print(100 * ' ')
+    
+def main():
+
+  a = FakultasTeknik('UNIVERSITAS NEGERI MAKASSAR', 'Teknik', 2019)
+  a.CetakData()
+  
+  del a
+  
+  a = TeknikKomputer('UNIVERSITAS NEGERI MAKASSAR', 'Teknik', 2019, '2 Angkatan (2018-2019)' )
+  a.CetakData()
+  
+  b = Mekatronika('UNIVERSITAS NEGERI MAKASSAR', 'Teknik', 2019, '2 Angkatan (2018-2019)' )
+  b.CetakData()
+  
+  del b
+  
+  b = PTIK('UNIVERSITAS NEGERI MAKASSAR', 'Teknik', 2019, '10 Angkatan (2009-2019)', 'Pendidikan Teknik Elektro')
+  b.CetakData()
+  
+if __name__ == "__main__":
+  main()
+  
